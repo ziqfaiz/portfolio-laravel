@@ -1,26 +1,39 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
+<script setup>
+  import {ref} from 'vue'
+  import {reactive} from 'vue'
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+  const counter = reactive({
+    count:0
+  })
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  const message = ref('Hello')
+  console.log(message.value)
+  
+  const titleClass = ref('title')
+
+  function increment(){
+    counter.count++
   }
-}
+
+  const text = ref("")
 </script>
 
+<template>
+  <h1>{{ message }}</h1>
+  <p>Count is {{ counter.count }}</p>
+  <div :class="titleClass">Make me red</div>
+
+  <button v-on:click="increment">{{ counter.count }}</button>
+  <br>
+  <input v-model="text">
+  <p>{{ text }}</p>
+</template>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .title{
+    color:red;
+  }
+
 </style>
+
+
