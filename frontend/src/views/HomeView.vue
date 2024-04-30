@@ -1,9 +1,9 @@
 <template>
-  <TestComponent />
-  <h1 class="text-3xl font-bold underline">tailwind</h1>
+  <main class="flex min-h-screen flex-col bg-[#121212] mx-auto py-4 px-2">
+    <HeroSection />
+  </main>
 </template>
 
 <script setup>
-import TestComponent from "@/components/TestComponent.vue";
-import "@/index.css";
+import HeroSection from "@/components/HeroSection.vue";
 </script>
