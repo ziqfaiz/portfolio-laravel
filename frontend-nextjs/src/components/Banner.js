@@ -12,10 +12,10 @@ export const Banner = () => {
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
   const toRotate = [
-    "Backend Development",
-    "Frontend Devvelopment",
+    "Backend Developer",
+    "Frontend Developer",
     "Data Engineer",
-    "Machine Learning",
+    "Data Scientist",
   ];
   const period = 2000;
 
@@ -69,25 +69,22 @@ export const Banner = () => {
                   }
                 >
                   <h1>
-                    {`Hi I'm Haziq, I'm interested in`}{" "}
+                    {`Hi I'm Haziq, I'm A`}{" "}
                     <span
                       className="txt-rotate"
                       dataPeriod="1000"
-                      data-rotate='[ "Backend Development","Frontend Development", "Data Engineering", "Machine Learning" ]'
+                      data-rotate='[ "Backend Developer","Frontend Developer", "Data Engineer", "Data Scientist" ]'
                     >
                       <span className="wrap">{text}</span>
                     </span>
                   </h1>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    My primary focus and aspiration lie within the realms of
+                    data engineering and data science, as I am deeply intrigued
+                    by the intricacies of analyzing data to extract valuable
+                    insights. Nevertheless, I also hold a keen interest in
+                    fullstack engineering{" "}
                   </p>
-                  <button onClick={() => console.log("connect")}>
-                    Let’s Connect <ArrowRightCircle size={25} />
-                  </button>
                 </div>
               )}
             </TrackVisibility>
