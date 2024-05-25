@@ -3,6 +3,14 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import svelte from "../assets/img/svelte.svg";
+import golang from "../assets/img/golang.svg";
+import tensorflow from "../assets/img/tensorflow.svg";
+import pytorch from "../assets/img/pytorch.svg";
+import laravel from "../assets/img/laravel.svg";
+import js from "../assets/img/js.svg";
+import python from "../assets/img/python.svg";
+import github from "../assets/img/github-purple.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -10,34 +18,47 @@ import TrackVisibility from "react-on-screen";
 export const Projects = () => {
   const web_projects = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "Event Management System",
+      description: "Laravel, Vue, MySQL",
+      imgUrl: laravel,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
+      title: "Words Counter",
+      description: "Golang, HTMX, Docker",
+      imgUrl: golang,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      title: "Automata Converter",
+      description: "JavaScript, HTML, CSS",
+      imgUrl: js,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "Premier League Scrollstory Web App",
+      description: "Svelte, D3js, LayerCake",
+      imgUrl: svelte,
+    },
+  ];
+
+  const ml_projects = [
+    {
+      title: "Satellite Image Segmentation Using Transformer",
+      description: "Pytorch, Transformer",
+      imgUrl: pytorch,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
+      title: "Lesion Detection Using Machne Learning",
+      description: "CuML, Tesorflow, Scikit Learn",
+      imgUrl: tensorflow,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      title: "C2 Malware Detection Using Machine Learning",
+      description: "DataBricks, Python, Scikit-learn",
+      imgUrl: js,
+    },
+    {
+      title: "Stock Price Correlation COefficient Prediction",
+      description: "ARIMA, LSTM",
+      imgUrl: python,
     },
   ];
 
@@ -56,7 +77,7 @@ export const Projects = () => {
                   <h2>Projects</h2>
                   <p>
                     These are my selected projects that are relevent to my
-                    skillset
+                    skillset. You can checkout my Github page for more details.
                   </p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav
@@ -88,7 +109,11 @@ export const Projects = () => {
                         </Row>
                       </Tab.Pane>
                       <Tab.Pane eventKey="second">
-                        <p>second </p>
+                        <Row>
+                          {ml_projects.map((project, index) => {
+                            return <ProjectCard key={index} {...project} />;
+                          })}
+                        </Row>
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
                         <p>third </p>
